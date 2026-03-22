@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
+/* Tailwind v4 custom theme — must use @theme, not tailwind.config.ts */
+@theme {
+  --color-tungsten-navy: #002854;
+  --color-tungsten-blue: #1E4D8C;
+  --color-tungsten-gold: #FFC600;
+  --color-tungsten-dark: #0E0E10;
+  --color-tungsten-surface: #F8F7F4;
+  --color-tungsten-warm: #F5F0E8;
+  --color-tungsten-border: #D9D9D9;
+  --color-tungsten-lightblue: #A7DCFB;
+  --color-tungsten-steel: #98AFC9;
+  --color-tungsten-bright: #00A0FB;
+  --color-tungsten-bluegray: #436080;
+  --color-tungsten-muted: #6B7280;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FFFFFF;
+  --surface: #F8F7F4;
+  --surface-warm: #F5F0E8;
+  --border: #D9D9D9;
+  --text: #0E0E10;
+  --text-muted: #6B7280;
+  --navy: #002854;
+  --gold: #FFC600;
+  --bright-blue: #00A0FB;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Arial', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings — tighter, bolder, matching Tungsten website */
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D1D9E6; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #B0BDD0; }
+
+/* Markdown prose in chat */
+.prose-chat h1, .prose-chat h2, .prose-chat h3 {
+  color: #002854;
+  font-weight: 700;
+  margin: 0.75rem 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+.prose-chat h1 { font-size: 1.25rem; }
+.prose-chat h2 { font-size: 1.05rem; }
+.prose-chat h3 { font-size: 0.95rem; }
+.prose-chat p { margin: 0.4rem 0; line-height: 1.65; color: #0E0E10; }
+.prose-chat ul, .prose-chat ol { padding-left: 1.25rem; margin: 0.4rem 0; }
+.prose-chat li { margin: 0.2rem 0; line-height: 1.6; }
+.prose-chat strong { color: #002854; font-weight: 700; }
+.prose-chat code {
+  background: #F0F2F5;
+  color: #002854;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.prose-chat hr { border-color: #D9D9D9; margin: 0.75rem 0; }
+.prose-chat table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; font-size: 0.85em; }
+.prose-chat th { background: #002854; color: white; padding: 0.4rem 0.6rem; text-align: left; font-weight: 600; }
+.prose-chat td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #D9D9D9; }
+.prose-chat tr:nth-child(even) { background: #F8F7F4; }
+.prose-chat blockquote {
+  border-left: 3px solid #002854;
+  padding-left: 0.75rem;
+  margin: 0.5rem 0;
+  color: #002854;
+  font-style: italic;
+}
+
+/* Pulse ring for "ready to generate" state */
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 40, 84, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 40, 84, 0); }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+  border-radius: 0.75rem;
 }

@@ -1,0 +1,332 @@
+================================================================================
+TUNGSTEN AUTOMATION AI POSITIONING — COMPLETE BUILD DIRECTIONS
+Barry McErlean — Full session history
+================================================================================
+
+Note: Some messages from the earliest part of the session were lost to context
+compaction. Where the original verbatim text no longer exists, the closest
+available reconstruction from the session continuation summary is provided
+and marked as [FROM SUMMARY].
+
+================================================================================
+MESSAGE 1 — App Concept & Vision
+================================================================================
+
+OK let's build a content generator agent called "Tungsten Automation AI
+Positioning." The output will be both Claude text from the interactive prompt
+and a PowerPoint Deck. The positioning will be different based on which pillar
+the user selects. There are 4 pillars. The home page should show 4 large
+Netflix type tiles one for each pillar. the user will click on the pillar of
+choice and they will be presented with a Claude based prompt with sample
+suggested prompts. It should use Opus 4.6. For now we will focus on the DWA
+Pillar. All 4 pillars should be present on the home page but foe now DWA will
+be operational.
+
+================================================================================
+MESSAGE 2 — Pillar Names
+================================================================================
+
+1) DWA Document & Workflow Automation
+2) AP & AR Automation - Accounts Payable & Accounts Receivable Automation
+3) Print
+4) PDF
+
+================================================================================
+MESSAGE 3 — DWA Content Type & Product Description
+================================================================================
+
+Q: "What type of positioning content should the DWA pillar generate?"
+A: "mostly number 1 above but primarily this will be based upon what the user
+asks for in the chat prompt powered by opus 4.6. the output should be
+powerpoint and i can give you the template to use. i will also give you
+various folders of content to access"
+
+Q: "Which Tungsten DWA products/solutions should the agent know about?"
+A: "TotalAgility which can also be referred to as intelligent document
+processing IDP, intelligent capture, workflow, BPM, Agentic AI, OCR, RPA
+and many other things"
+
+================================================================================
+MESSAGE 4 — PowerPoint Template [FROM SUMMARY]
+================================================================================
+
+@C:\Users\Barry.McErlean\Downloads\TungstenAutomation_PPT_Template_2026 (1).potx
+here is the template we should use for any powerpoint deck
+
+================================================================================
+MESSAGE 5 — SharePoint Content Folders
+================================================================================
+
+* General:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General
+
+* Communications:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Communications
+
+* Enablement Processes:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Enablement%20Processes
+
+* Enablement Templates:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Enablement%20Templates
+
+* Events:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Events
+
+* Generated Content:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Generated%20Content
+
+* JAM Sessions:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/JAM%20Sessions
+
+* MEDDPICC:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/MEDDPICC
+
+* Partner Enablement:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Partner%20Enablement
+
+* Pillar Strategy:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Pillar%20Strategy
+
+* Programs:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Programs
+
+* Sales Tools:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Sales%20Tools
+
+* The Vital 5:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/The%20Vital%205
+
+* Value Sales Tools:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Value%20Sales%20Tools
+
+* Virtual New Hire:
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Virtual%20New%20Hire
+
+* Delivery - Sales Enablement (Sarah's working folder):
+  https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Delivery%20-%20Sales%20Enablement
+
+  * SVP Reporting:
+    https://kofaxinc.sharepoint.com/:f:/r/sites/SalesEnablement/Shared%20Documents/General/Delivery%20-%20Sales%20Enablement/SVP%20Reporting%20and%20Alignment
+
+================================================================================
+MESSAGE 6 — Content Date Filter [FROM SUMMARY]
+================================================================================
+
+only use content from 2025 onwards
+
+================================================================================
+MESSAGE 7 — Industry Solutions SharePoint Link
+================================================================================
+
+https://kofaxinc.sharepoint.com/:f:/r/sites/StrategicEngagements-IndustrySolutions/Shared%20Documents/Industry%20Solutions?csf=1&web=1&e=G1UaT0
+
+================================================================================
+MESSAGE 8 — Highspot Resource [FROM SUMMARY]
+================================================================================
+
+another good resource
+https://view-su2.highspot.com/viewer/00588880faa5c8e2608d123cb064653c
+
+================================================================================
+MESSAGE 9 — 6-Step Operating Model [FROM SUMMARY]
+================================================================================
+
+The 6-step operating model for the DWA agent, refined over multiple messages:
+
+1. Gather account + scenario from the user
+2. Research account externally via web search
+3. Review Industry Solutions & Value Engineering materials
+4. Apply positioning angle based on client's AI strategy
+   (two scenarios: client HAS AI platform vs does NOT)
+5. Build differentiating position around core pillars
+6. Produce PowerPoint deck from corporate template or
+   executive-quality chat briefing
+
+Additional mandates:
+- All output must be value-led (what the customer achieves, not product features)
+- Value-led positioning framework: L3 = Labor, Logistics, Liability ROI
+- Combine all sources in output
+
+================================================================================
+MESSAGE 10 — Tungsten Website Link [FROM SUMMARY]
+================================================================================
+
+https://www.tungstenautomation.com/solutions/artificial-intelligence
+
+================================================================================
+MESSAGE 11 — Build vs Buy Core Principle [FROM SUMMARY]
+================================================================================
+
+"re iterate the following message to the Agent and keep it as a core principle
+as they interact with the user"
+
+Full Build vs Buy positioning with market data:
+- Purchasing AI tools from vendors succeeds 67% of time vs internal builds
+  at 1/3 rate
+- MIT: 95% of GenAI projects not delivering significant value
+- S&P Global: 42% of companies abandoned most AI initiatives in 2025
+- BCG: only 26% succeed beyond POC
+- Top obstacles: data quality/readiness (43%), technical maturity (43%),
+  skills shortage (35%)
+- Winning programs earmark 50-70% of timeline/budget for data readiness
+- Core message: "We're not replacing your AI strategy. We're making it work."
+
+================================================================================
+MESSAGE 12 — Build vs Buy Document Reference
+================================================================================
+
+use this artefact as a key source of information -
+https://kofaxinc-my.sharepoint.com/:w:/g/personal/barry_mcerlean_kofax_com/IQBCz-uUMIXAR5d4cs7sMx5-AVCECm2dinCCCSvt3KUw8F4?e=By0JwE
+
+================================================================================
+MESSAGE 13 — Word Document Component
+================================================================================
+
+let's add a component - every time you produce a powerpoint deck also provide
+a positioning document in word - similar to the construct of the Build v Buy
+word doc but adjusted accordingly to the specific request at hand
+
+================================================================================
+MESSAGE 14 — Daily Hub Protection
+================================================================================
+
+we don't want to kill the daily hub
+
+================================================================================
+MESSAGE 15 — Logo in Title Bar
+================================================================================
+
+include the tungsten automation logo in the top left instead of the words
+
+================================================================================
+MESSAGE 16 — Logo Without "Formerly Kofax"
+================================================================================
+
+use a tungsten logo that doesn't say formerly kofax
+
+================================================================================
+MESSAGE 17 — Font & Color Inspiration
+================================================================================
+
+for the font and colors take inspiration from
+Trusted Choice in Workflow Automation | Tungsten Automation (Formerly Kofax)
+
+================================================================================
+MESSAGE 18 — Pillar Logo & Font [FROM SUMMARY]
+================================================================================
+
+use the pillar logo and font
+
+================================================================================
+MESSAGE 19 — Website Pillar Images for Tiles
+================================================================================
+
+on the tungsten automation website use the 4 pillar images for the tiles
+
+================================================================================
+MESSAGE 20 — Home Page UI Refinements (8 points)
+================================================================================
+
+ok few things:
+1) remove AI positioning from the title bar
+2) use the larger tungsten logo in the title bar
+3) replace the links to the right with date time and dark mode button
+4) remove the tungsten logo that's in center page
+5) lose some of the whitespace that is resulting
+6) in the tiles change the small logos to match the pillar logos on
+   tungstenautomation.com
+7) move the text down on the DWA tile to align with other tiles
+8) remove the 3rd line of txt from each tile
+
+================================================================================
+MESSAGE 21 — DWA Page UX, Content Generator, Branding (5 points)
+================================================================================
+
+ok next steps
+1) review the DWA page tidy up the font, make it super professional - perhaps
+   copy the Claude Chat or Claude Cowork interfaces for font, aesthetics &
+   functionality
+2) test the prompt interaction, it doesn't appear to work
+3) test the content generator, what if i want both ppt and word there is no
+   option, rethink that
+4) does the content generator take into context that chat dialogue? it
+   absolutely should. maybe the title should be Ready for Content generator?
+   or something to indicate to the user that they can chat first and their
+   input will be used or they can go straight to content generator. don't make
+   the instructions too wordy.
+5) use the colored version of the DWA logo on this page - smarten up the brand
+
+================================================================================
+MESSAGE 22 — Whitespace & Layout
+================================================================================
+
+love the new DWA page - kill the whitespace above DWA Positioning and move up
+the prompt box to just below the suggested prompts
+
+================================================================================
+MESSAGE 23 — Button Visibility & Bottom Text
+================================================================================
+
+the button for generating ppt and doc is not visible until you scroll to that
+area - also no need for the text at the bottom which starts with ".pptx uses
+your ..."
+
+================================================================================
+MESSAGE 24 — UI Clarity on Content Generation
+================================================================================
+
+also the prompt finished with this statement but the UI didn't indicate if the
+content was created or if i needed to hit the button: "Both deliverables are
+ready for use. The deck is structured for a 30-minute CIO conversation with
+speaker notes for the presenting AE. The positioning document serves as the
+detailed reference for the wider account team, pre-meeting preparation, and
+internal deal review."
+
+================================================================================
+MESSAGE 25 — Live Status Bars for Generation
+================================================================================
+
+maybe we need a better experience when the deck and doc are being created.
+should we have a live status bar for Generating Deck & Generating Document
+that has green percentage bar that increases as the artefact in question is
+being generated.
+
+================================================================================
+MESSAGE 26 — Progress Bar Pacing
+================================================================================
+
+the status bars for the content creation quickly raced to hi 90% but then
+slowed down dramatically — should we set better expectations with a more
+gradual increase in progress on creation status?
+
+================================================================================
+MESSAGE 27 — Chat Session Persistence
+================================================================================
+
+would also be possible to revisit a chat session after i leave the page and
+come back - i want the user to be able to pick up where they left off
+
+================================================================================
+MESSAGE 28 — UTF-8 Character Encoding
+================================================================================
+
+funny combo of characters appearing — the em dash showing as garbled text
+in generated documents
+
+================================================================================
+
+END OF BUILD DIRECTIONS
+
+Key Reference URLs:
+  - SharePoint Sales Enablement (15 folders): see Message 5
+  - SharePoint Industry Solutions: see Message 7
+  - Highspot: see Message 8
+  - Tungsten AI Solutions page: see Message 10
+  - Build vs Buy OneDrive doc: see Message 12
+  - PowerPoint template: C:\Users\Barry.McErlean\Downloads\TungstenAutomation_PPT_Template_2026 (1).potx
+
+Key Strategic Frameworks:
+  - 6-Step Operating Model: see Message 9
+  - Build vs Buy Core Principle with market stats: see Message 11
+  - Value-led positioning: L3 = Labor, Logistics, Liability ROI
+  - Core message: "We're not replacing your AI strategy. We're making it work."
