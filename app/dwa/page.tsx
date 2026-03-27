@@ -6,6 +6,7 @@ import { SquarePen } from "lucide-react";
 import ChatInterface from "@/components/chat-interface";
 import ContentGenerator from "@/components/content-generator";
 import { clearChatMessages } from "@/lib/chat-storage";
+import { DWA_PRIMARY_PROMPT, DWA_QUICK_STARTS } from "@/lib/dwa-sample-prompts";
 
 export default function DWAPage() {
   const [chatContext, setChatContext] = useState<string>("");
@@ -15,7 +16,7 @@ export default function DWAPage() {
   const handleContextChange = useCallback((ctx: string) => setChatContext(ctx), []);
 
   function handleNewChat() {
-    clearChatMessages();
+    clearChatMessages("dwa");
     setChatContext("");
     setChatKey((k) => k + 1); // force-remount ChatInterface with fresh state
   }
@@ -50,7 +51,13 @@ export default function DWAPage() {
           </button>
         </div>
         <div className="flex-1 min-h-0">
-          <ChatInterface key={chatKey} onContextChange={handleContextChange} />
+          <ChatInterface
+            key={chatKey}
+            pillarId="dwa"
+            primaryPrompt={DWA_PRIMARY_PROMPT}
+            quickStarts={DWA_QUICK_STARTS as unknown as string[]}
+            onContextChange={handleContextChange}
+          />
         </div>
       </div>
 

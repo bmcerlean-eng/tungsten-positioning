@@ -15,25 +15,27 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  DWA_PRIMARY_PROMPT,
-  DWA_QUICK_STARTS,
-} from "@/lib/dwa-sample-prompts";
-import {
   saveChatMessages,
   loadChatMessages,
 } from "@/lib/chat-storage";
 
 interface ChatInterfaceProps {
   onContextChange?: (context: string) => void;
+  pillarId: string;
+  primaryPrompt: string;
+  quickStarts: string[];
 }
 
-export default function ChatInterface({ onContextChange }: ChatInterfaceProps) {
+export default function ChatInterface({ onContextChange, pillarId, primaryPrompt, quickStarts }: ChatInterfaceProps) {
   // Restore any previously saved messages (runs once on mount)
-  const initialMessages = useMemo(() => loadChatMessages() ?? undefined, []);
+  const initialMessages = useMemo(() => loadChatMessages(pillarId) ?? undefined, [pillarId]);
 
   const transport = useMemo(
-    () => new DefaultChatTransport({ api: "/api/chat" }),
-    []
+    () => new DefaultChatTransport({
+      api: "/api/chat",
+      body: { pillar: pillarId },
+    }),
+    [pillarId]
   );
 
   const { messages, sendMessage, status } = useChat({
@@ -69,7 +71,7 @@ export default function ChatInterface({ onContextChange }: ChatInterfaceProps) {
     if (messageCount === 0) return;
 
     // Persist to localStorage so the user can resume later
-    saveChatMessages(messages);
+    saveChatMessages(pillarId, messages);
 
     if (!onContextChange) return;
     const context = messages
@@ -236,7 +238,7 @@ export default function ChatInterface({ onContextChange }: ChatInterfaceProps) {
   if (!hasMessages) {
     return (
       <div className="flex flex-col h-full overflow-y-auto">
-        <EmptyState onQuickStart={doSend} />
+        <EmptyState primaryPrompt={primaryPrompt} quickStarts={quickStarts} onQuickStart={doSend} />
         {inputBar}
       </div>
     );
@@ -352,7 +354,7 @@ const AssistantMessage = memo(function AssistantMessage({
 
 /* ---------- Empty State ---------- */
 
-function EmptyState({ onQuickStart }: { onQuickStart: (prompt: string) => void }) {
+function EmptyState({ primaryPrompt, quickStarts, onQuickStart }: { primaryPrompt: string; quickStarts: string[]; onQuickStart: (prompt: string) => void }) {
   return (
     <div className="max-w-[640px] mx-auto flex flex-col items-center px-4 pt-4 pb-4">
       <div className="w-full space-y-6">
@@ -360,16 +362,16 @@ function EmptyState({ onQuickStart }: { onQuickStart: (prompt: string) => void }
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F0F0F0] text-[11px] font-medium text-[#666]">
             <Sparkles className="w-3 h-3 text-tungsten-gold" />
-            DWA Positioning
+            AI Positioning
           </div>
           <h1 className="text-[20px] font-semibold text-[#1a1a1a] leading-snug">
-            {DWA_PRIMARY_PROMPT}
+            {primaryPrompt}
           </h1>
         </div>
 
         {/* Quick start cards */}
         <div className="grid grid-cols-2 gap-2.5">
-          {DWA_QUICK_STARTS.map((prompt, i) => (
+          {quickStarts.map((prompt, i) => (
             <button
               key={i}
               onClick={() => onQuickStart(prompt)}
