@@ -4,6 +4,35 @@ import { execFile } from "child_process";
 import { readFile, unlink } from "fs/promises";
 import path from "path";
 
+// Session ingress token written by Claude Code in remote environments
+const SESSION_TOKEN_FILE = "/home/claude/.claude/remote/.session_ingress_token";
+
+async function getAnthropicClient() {
+  // 1. Prefer an explicit API key from env or .env.local
+  let apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    try {
+      const fs2 = await import("fs");
+      const content = fs2.readFileSync(path.join(process.cwd(), ".env.local"), "utf8");
+      const match = content.match(/^ANTHROPIC_API_KEY=(.+)/m);
+      if (match) apiKey = match[1].trim();
+    } catch { /* ignore */ }
+  }
+  if (apiKey) {
+    return createAnthropic({ apiKey, baseURL: "https://api.anthropic.com/v1" });
+  }
+
+  // 2. Fall back to Claude Code session token (Bearer auth) in remote environments
+  try {
+    const fs2 = await import("fs");
+    const authToken = fs2.readFileSync(SESSION_TOKEN_FILE, "utf8").trim();
+    return createAnthropic({ authToken, baseURL: "https://api.anthropic.com/v1" });
+  } catch { /* ignore */ }
+
+  // 3. Let SDK pick up ANTHROPIC_API_KEY from env as last resort
+  return createAnthropic({ baseURL: "https://api.anthropic.com/v1" });
+}
+
 /** Try py → python → python3 in order; return the first that works. */
 async function resolvePython(): Promise<string> {
   for (const cmd of ["py", "python", "python3"]) {
@@ -33,20 +62,7 @@ export async function POST(req: Request) {
       ? `\n\nIMPORTANT CONTEXT — The user had the following conversation with the DWA Positioning Assistant before requesting this content. Use this context to tailor your output:\n\n${chatContext}\n\n`
       : "";
 
-    let apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      try {
-        const fs2 = await import("fs");
-        const content = fs2.readFileSync(path.join(process.cwd(), ".env.local"), "utf8");
-        const match = content.match(/ANTHROPIC_API_KEY=(.*)/);
-        if (match) apiKey = match[1].trim();
-      } catch { /* ignore */ }
-    }
-
-    const anthropic = createAnthropic({
-      apiKey: apiKey!,
-      baseURL: "https://api.anthropic.com/v1",
-    });
+    const anthropic = await getAnthropicClient();
 
     // Determine which format to generate
     const outputFormat = format || "pptx"; // "pptx", "docx", or "both"
