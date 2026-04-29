@@ -4,10 +4,11 @@ import { getPillarPrompt } from "@/lib/pillar-prompts";
 
 export const maxDuration = 120;
 
-export async function POST(req: Request) {
-  const { messages, pillar }: { messages: UIMessage[]; pillar?: string } = await req.json();
+// Session ingress token written by Claude Code in remote environments
+const SESSION_TOKEN_FILE = "/home/claude/.claude/remote/.session_ingress_token";
 
-  // Fallback: read key from .env.local if process.env didn't load it
+async function getAnthropicClient() {
+  // 1. Prefer an explicit API key from env or .env.local
   let apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     try {
@@ -15,16 +16,29 @@ export async function POST(req: Request) {
       const path = await import("path");
       const envPath = path.join(process.cwd(), ".env.local");
       const content = fs.readFileSync(envPath, "utf8");
-      const match = content.match(/ANTHROPIC_API_KEY=(.*)/);
+      const match = content.match(/^ANTHROPIC_API_KEY=(.+)/m);
       if (match) apiKey = match[1].trim();
     } catch { /* ignore */ }
   }
+  if (apiKey) {
+    return createAnthropic({ apiKey, baseURL: "https://api.anthropic.com/v1" });
+  }
 
-  const anthropic = createAnthropic({
-    apiKey: apiKey!,
-    baseURL: "https://api.anthropic.com/v1",
-  });
+  // 2. Fall back to Claude Code session token (Bearer auth) in remote environments
+  try {
+    const fs = await import("fs");
+    const authToken = fs.readFileSync(SESSION_TOKEN_FILE, "utf8").trim();
+    return createAnthropic({ authToken, baseURL: "https://api.anthropic.com/v1" });
+  } catch { /* ignore */ }
 
+  // 3. Let SDK pick up ANTHROPIC_API_KEY from env as last resort
+  return createAnthropic({ baseURL: "https://api.anthropic.com/v1" });
+}
+
+export async function POST(req: Request) {
+  const { messages, pillar }: { messages: UIMessage[]; pillar?: string } = await req.json();
+
+  const anthropic = await getAnthropicClient();
   const { systemPrompt, content } = getPillarPrompt(pillar ?? "dwa");
   const fullSystemPrompt = systemPrompt + "\n\n" + content;
 
