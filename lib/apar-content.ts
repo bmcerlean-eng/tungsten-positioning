@@ -43,6 +43,14 @@ Use these questions during initial discovery calls to qualify AP/AR opportunitie
 **Reframe:** Calculate the cost of NOT switching — duplicate payments (1–3% of AP spend), missed early-payment discounts (2% on 10-day terms), late payment penalties, manual processing costs ($15–$40 per invoice), and growing compliance exposure. InvoiceAgility typically pays for itself in 6–9 months.
 **Evidence:** The total cost of manual AP processing — including labor, errors, rework, missed discounts, and compliance risk — far exceeds the investment in automation. Start with a phased approach: automate the highest-volume invoice streams first and expand as ROI is proven.
 
+### 6. "Our AI CoE is building invoice automation internally on Azure OpenAI."
+**Reframe:** Boring AI. AP is mandatory, repeatable, and high-stakes — but it's not what differentiates your business. Let your CoE build what makes you unique. Let InvoiceAgility (and the Tungsten DocAI Platform underneath) handle ingestion, OCR, classification, line-item extraction, PO matching, duplicate detection, e-invoicing compliance, and ERP integration — capabilities built over decades, certified to SOC 2 / ISO 27001 / FedRAMP / EU AI Act, and shipped to 25,000+ customers. 95% of internal GenAI pilots fail to deliver measurable ROI; vendor-sourced AI succeeds at 2× the rate of DIY.
+**Evidence:** Replicating InvoiceAgility internally would require recreating intelligent capture (95%+ first-time accuracy), 100+ countries of e-invoicing compliance, ERP-native integration with D365 / Oracle / NetSuite / Coupa, duplicate-detection ML, prompt-injection-resistant LLM extraction, and a continuously-learning feedback loop — across years, not sprints. The Boring AI play frees the CoE to focus on differentiation.
+
+### 7. "We'll point a GenAI agent at our AP inbox — it'll just figure it out."
+**Reframe:** Then your agent inherits the data problem: ungoverned, unstructured, unverifiable, hallucinating line items and GL codes, with no audit trail when an auditor asks where a payment authorisation came from. InvoiceAgility makes your agent's output reliable by giving it trusted, AI-ready invoice data — agent-addressable via MCP / A2A. The probabilistic agent reasons; the deterministic platform validates. Probabilistic intelligence belongs inside deterministic systems.
+**Evidence:** InvoiceAgility delivers confidence scoring on every extracted field, business-rule validation, duplicate detection, full audit trail, and patented hierarchical document representation that reduces prompt-injection attack surface. Your agent calls these capabilities as governed tool calls — it doesn't invent invoice data from raw PDFs.
+
 ---
 
 ## Industry-Specific Value Hooks

@@ -2,10 +2,10 @@ export const DWA_PRIMARY_PROMPT =
   "Tell me the account and scenario you're working on, and I'll build a tailored positioning brief.";
 
 export const DWA_QUICK_STARTS = [
-  "I'm pitching Citibank — they have an existing Azure AI strategy but struggle with unstructured lending docs",
-  "Build me a deck for Aviva — position Knowledge Discovery for broker presentation analysis",
-  "I need to position TotalAgility Enterprise for a Fortune 500 bank evaluating Hyperscience",
-  "Help me handle the objection: 'We can just use Azure AI Document Intelligence — why pay for Tungsten?'",
+  "Position Tungsten as the AI Understanding Layer for Citibank — their AI CoE is mandated to build document understanding internally on Azure OpenAI",
+  "Brief a CIO who thinks their AI CoE will solve unstructured data internally — make the Boring AI / build-vs-buy case",
+  "Build me a deck for Aviva — position Knowledge Discovery for broker submission analysis and cross-claim fraud detection",
+  "Help me handle the objection: 'Our agents will just call the LLM directly — why do we need Tungsten?'",
 ];
 
 export const DWA_PROMPT_CATEGORIES = [
@@ -35,6 +35,8 @@ export const DWA_PROMPT_CATEGORIES = [
     color: "text-amber-500",
     prompts: [
       "They say 'We can build this with Azure AI Document Intelligence' — how do I respond?",
+      "The client's AI CoE says they'll build this internally — give me the Boring AI counter",
+      "They say 'Our agents will just call the LLM directly' — how do I reframe with the AI Understanding Layer wedge?",
       "The client thinks RPA from UiPath can handle their document processing — what's our counter?",
       "Procurement is pushing back on price — help me justify TotalAgility Advanced vs ABBYY",
     ],

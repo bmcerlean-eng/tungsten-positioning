@@ -39,8 +39,16 @@ Use these questions during initial discovery calls to qualify opportunities and 
 **Evidence:** 8 of the top 10 global banks and 7 of the top 10 global insurers trust Tungsten with their most sensitive documents. 40-year track record in regulated industries.
 
 ### 5. "How is this different from what we already have?"
-**Reframe:** Tungsten goes beyond traditional document capture or basic automation. Knowledge Discovery uses AI to uncover insights buried in unstructured data — enabling smarter decisions, not just faster processing. And it's all in one platform: IDP + workflow + decisioning + governance.
-**Evidence:** Knowledge Discovery Agent architecture with multi-agent orchestration delivers capabilities that would require 3+ separate products from competitors. 2025 Gartner Magic Quadrant Leader for IDP validates the technology differentiation.
+**Reframe:** Tungsten is **the AI Understanding Layer** — the Tungsten DocAI™ Platform. We go beyond traditional document capture and basic automation. Knowledge Discovery uses AI to surface insights buried *across* unstructured data, not just within a single document. And it's all in one platform: IDP + workflow + decisioning + governance + agentic foundation, exposed via MCP/A2A so your agents can call it as a tool.
+**Evidence:** Knowledge Discovery Agent architecture with multi-agent orchestration delivers capabilities that would require 3+ separate products from competitors. 2025 Gartner Magic Quadrant Leader for IDP. 230+ patents including US Patent 12,197,412 B2 covering hierarchical document representation — the structural anti-prompt-injection IP.
+
+### 6. "Our AI CoE is going to build this internally."
+**Reframe:** Boring AI. Document understanding is mandatory, repeatable, and high-stakes — but it's not what differentiates your business. Have your AI CoE build the AI that makes your business unique (customer-facing models, proprietary domain reasoning, agent strategy). Let the DocAI Platform handle ingestion, OCR, classification, extraction, validation, governance, and compliance — capabilities that took us 40 years and 230+ patents to build. Vendor-sourced AI succeeds at 2× the rate of DIY (67% vs 33%).
+**Evidence:** 95% of internal generative-AI investments see zero measurable ROI (MIT NANDA, 2025). 42% of companies abandoned most AI initiatives in 2025 (S&P Global). Only 26% of AI projects succeed beyond proof of concept (BCG). Winning AI programmes spend 50–70% of timeline and budget on data readiness — exactly what Tungsten solves.
+
+### 7. "Our agents will just call the LLM directly."
+**Reframe:** Then your agent inherits the data problem: ungoverned, unstructured, unverifiable, hallucinating, and exposed to prompt-injection attacks. Tungsten makes your agent's calls *reliable* by giving it trusted, AI-ready data and deterministic guardrails. We're agent-addressable via MCP and A2A — your agent calls our governed capabilities the same way it calls any other tool. Probabilistic intelligence belongs inside deterministic systems.
+**Evidence:** Tungsten's patented hierarchical document representation reduces prompt-injection attack surface by design — the model never sees raw, untrusted text. Plus full prompt-injection prevention, prompt management & guardrails, encryption at rest and in transit, RBAC, full audit trail, SOC 2 Type 1 & 2, ISO 27001:2022, FedRAMP High, and EU AI Act compliance.
 
 ---
 

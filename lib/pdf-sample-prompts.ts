@@ -35,6 +35,7 @@ export const PDF_PROMPT_CATEGORIES = [
     color: "text-amber-500",
     prompts: [
       "The client says 'Adobe is the industry standard' — how do I reframe that?",
+      "They ask 'why does my PDF tool come from an AI document company?' — give me the AI Understanding Layer reframe",
       "Procurement wants to know why they should switch from a tool everyone already knows — build the case",
       "IT is concerned about migration complexity from Adobe to Power PDF across 2,000 desktops — what's my response?",
     ],

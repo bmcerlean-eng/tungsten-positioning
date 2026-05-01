@@ -44,6 +44,10 @@ Use these questions during initial discovery calls to qualify opportunities and 
 **Reframe:** Printix was designed for exactly this scenario. Automatic printer discovery identifies every device on the network regardless of manufacturer. Intelligent driver management handles multi-vendor fleets natively — HP, Canon, Ricoh, Xerox, Konica Minolta, all managed from one cloud console. Cross-platform support means Windows, Mac, Chromebook, iOS, and Android users all print through the same system.
 **Evidence:** Printix supports automatic discovery and management across all major printer manufacturers. Cross-platform support includes Windows, Windows ARM, Mac, iOS, Android, and Chromebook — all from a single cloud management plane.
 
+### 6. "Why are we buying print management from an AI document company?"
+**Reframe:** That's exactly the point. Tungsten is the **AI Understanding Layer** — the platform that turns unstructured content (printed, scanned, captured) into trusted, AI-ready data. Printix and ControlSuite are the print-management expressions of that platform: secure release and audit trails for the print side; content-aware processing and capture-to-AI for the scan side. You're not buying two unrelated tools — you're buying one trusted vendor that governs content end-to-end, from device to AI agent.
+**Evidence:** 2025 Gartner Magic Quadrant Leader for IDP. SOC 2 Type 1 & 2, ISO 27001:2022, FedRAMP High, HIPAA, PCI DSS, GDPR. ControlSuite's content-aware processing connects directly to TotalAgility for end-to-end document automation across the full content lifecycle.
+
 ---
 
 ## Industry-Specific Value Hooks

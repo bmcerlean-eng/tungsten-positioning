@@ -3,9 +3,9 @@ export const APAR_PRIMARY_PROMPT =
 
 export const APAR_QUICK_STARTS = [
   "We're pitching a global manufacturer running SAP — they process 500K invoices/year across 12 countries and need e-invoicing compliance",
-  "Help me position InvoiceAgility for a mid-market retailer on NetSuite who's drowning in manual invoice processing",
+  "Position InvoiceAgility as the AI Understanding Layer for AP — the CFO and CIO are aligned on AI-led finance transformation",
+  "Counter a build-it-yourself agentic AP pitch — their AI CoE wants to point a GenAI agent at the AP inbox",
   "Build a competitive displacement deck: migrate a bank from Basware to Tungsten InvoiceAgility",
-  "A healthcare system using D365 wants to reduce their 45-day payment cycle — how do we position InvoiceAgility?",
 ];
 
 export const APAR_PROMPT_CATEGORIES = [
@@ -35,6 +35,8 @@ export const APAR_PROMPT_CATEGORIES = [
     color: "text-amber-500",
     prompts: [
       "They say 'Our ERP handles AP already' — how do I respond?",
+      "Their AI CoE wants to build invoice automation internally on Azure OpenAI — give me the Boring AI counter",
+      "They want to point a GenAI agent at the AP inbox — how do I reframe with the agent-addressable / trusted-data wedge?",
       "The client just implemented Coupa and thinks they don't need InvoiceAgility — what's our counter?",
       "CFO says their invoice volume is too low to justify automation — help me reframe",
     ],

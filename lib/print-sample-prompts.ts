@@ -36,6 +36,7 @@ export const PRINT_PROMPT_CATEGORIES = [
     prompts: [
       "The CIO says 'print is dying' — how do I reframe the conversation around print management?",
       "IT says Microsoft Universal Print is good enough — give me the counter-argument",
+      "They ask 'why are we buying print management from an AI document company?' — give me the AI Understanding Layer reframe",
       "The client says they have no budget for print infrastructure — how do I flip that objection?",
     ],
   },

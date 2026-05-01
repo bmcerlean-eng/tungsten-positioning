@@ -37,6 +37,10 @@ Use these questions during initial discovery calls to qualify opportunities and 
 **Reframe:** Power PDF Advanced and Business include Cloud Editor for browser-based editing — no desktop install required. But desktop-first architecture means your most sensitive documents never have to leave your network. For regulated industries, this dual approach — cloud when convenient, desktop when compliance demands it — is the best of both worlds.
 **Evidence:** Cloud Editor provides full editing in any modern browser. Mobile apps (iOS/Android) cover on-the-go needs. Desktop app ensures data sovereignty for sensitive work.
 
+### 6. "Why does my PDF tool come from an AI document company?"
+**Reframe:** Because PDFs are where most enterprise content is created, redacted, signed, and governed by individuals — and that content has to be trusted before any AI agent or downstream workflow touches it. Power PDF is the desktop expression of the **Tungsten DocAI™ Platform**, the AI Understanding Layer. Same governance posture, same compliance certifications (SOC 2 Type 1 & 2, ISO 27001:2022, FedRAMP High, HIPAA, PCI DSS, GDPR), same vendor your CIO already trusts for enterprise document intelligence. One vendor, end-to-end content governance.
+**Evidence:** 2025 Gartner Magic Quadrant Leader for IDP. 25,000+ customers across regulated industries. 230+ patents. Power PDF's redaction, encryption, Bates numbering, and audit-ready features are the same compliance primitives that flow through the rest of the DocAI Platform.
+
 ---
 
 ## Industry-Specific Value Hooks
