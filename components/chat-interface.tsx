@@ -14,21 +14,19 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  saveChatMessages,
-  loadChatMessages,
-} from "@/lib/chat-storage";
+import { saveChat, loadChat } from "@/lib/chat-storage";
 
 interface ChatInterfaceProps {
   onContextChange?: (context: string) => void;
   pillarId: string;
+  chatId: string;
   primaryPrompt: string;
   quickStarts: string[];
 }
 
-export default function ChatInterface({ onContextChange, pillarId, primaryPrompt, quickStarts }: ChatInterfaceProps) {
-  // Restore any previously saved messages (runs once on mount)
-  const initialMessages = useMemo(() => loadChatMessages(pillarId) ?? undefined, [pillarId]);
+export default function ChatInterface({ onContextChange, pillarId, chatId, primaryPrompt, quickStarts }: ChatInterfaceProps) {
+  // Restore messages for this specific chat (runs once on mount; parent remounts on chatId change)
+  const initialMessages = useMemo(() => loadChat(pillarId, chatId) ?? undefined, [pillarId, chatId]);
 
   const transport = useMemo(
     () => new DefaultChatTransport({
@@ -71,7 +69,7 @@ export default function ChatInterface({ onContextChange, pillarId, primaryPrompt
     if (messageCount === 0) return;
 
     // Persist to localStorage so the user can resume later
-    saveChatMessages(pillarId, messages);
+    saveChat(pillarId, chatId, messages);
 
     if (!onContextChange) return;
     const context = messages
