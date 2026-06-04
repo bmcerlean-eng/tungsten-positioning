@@ -18,6 +18,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Claude Code Skill: `/ai-positioning`
+
+This repo ships with a Claude Code skill that packages the same positioning logic the web app uses — DWA, AP/AR, Print, and PDF prompts, objection handling, discovery questions, deck templates. Use it when you want positioning help without spinning up the dev server.
+
+**To use it:**
+
+1. Open a Claude Code session anywhere inside this repo.
+2. Type `/ai-positioning` or describe what you're working on (e.g. "Help me position DWA for Citibank" — the skill auto-triggers from the description).
+3. Claude will ask which pillar applies, then produce account-specific positioning.
+
+The skill outputs markdown only. For branded `.pptx` / `.docx` files, run the web app's Content Generator panel.
+
+The skill lives at `.claude/skills/ai-positioning/`. To update it when the system prompts in `lib/*-system-prompt.ts` change, manually re-sync the matching `references/*.md` files.
+
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
