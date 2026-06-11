@@ -2,19 +2,23 @@
 name: tungsten-positioning
 description: >-
   Generate executive-quality Tungsten Automation sales positioning content for a
-  specific account and scenario, then export it as BOTH a branded Word (.docx)
-  document and a standalone HTML file. Use whenever the user wants to produce
-  Tungsten positioning collateral, a positioning brief, a Build-vs-Buy document,
-  or account-specific sales content outside the web app — for any pillar (DWA,
-  AP & AR, Print, PDF).
+  specific account and scenario, then export it as a branded Word (.docx)
+  document, a standalone HTML page, and/or a self-contained HTML slide deck. Use
+  whenever the user wants to produce Tungsten positioning collateral, a positioning
+  brief, a Build-vs-Buy document, or an account-specific deck/presentation outside
+  the web app — for any pillar (DWA, AP & AR, Print, PDF).
 ---
 
 # Tungsten AI Positioning — Document + HTML
 
-This skill reproduces the core deliverable of the Tungsten AI Positioning app: an
-executive positioning document, tailored to a named account and scenario, exported
-as a branded **Word document** and a matching **HTML** page. You (Claude) author the
-content; a bundled script renders both files from a single JSON object.
+This skill reproduces the deliverables of the Tungsten AI Positioning app, tailored to a
+named account and scenario:
+
+- A **positioning document** — branded **Word (.docx)** + matching **HTML** page.
+- An optional **slide deck** — a self-contained, navigable **HTML** presentation.
+
+You (Claude) author the content; bundled scripts render the files from JSON. Ask the user
+which they want (document, deck, or both) if it isn't clear; default to the document.
 
 ## Inputs to gather
 
@@ -112,3 +116,53 @@ Author exactly this shape (no markdown, no code fences in the file you write):
 Supported section `type`s: `heading`, `subheading`, `paragraph`, `bullets`, `callout`,
 `table`, `page_break`. Both renderers understand all of them — keep to this schema so the
 Word doc and HTML stay in sync.
+
+---
+
+## Slide deck (optional)
+
+When the user wants a presentation/deck, author a separate **slide JSON** (same product
+knowledge and PISB arc as above, but slide-shaped) and render it to a self-contained HTML
+slideshow. The same step 1–3 grounding applies.
+
+Render:
+
+```bash
+cat /tmp/tungsten_deck.json | python3 .claude/skills/tungsten-positioning/scripts/render_deck_html.py generated-positioning/<Account>_<pillar>_deck
+```
+
+The output `.html` is dependency-free: arrow keys / Space / click edges to navigate,
+**N** toggles speaker notes, **F** fullscreen, and it prints cleanly to PDF (one slide per
+page). Then deliver it with `SendUserFile`.
+
+### Deck rules
+
+- First slide `title`, last slide `closing`. Use `section` dividers for PISB transitions.
+- Include at least one `stats` slide (3 industry-relevant stats) and one `comparison`
+  slide (Tungsten vs DIY/competitor, tailored to the account's stack).
+- Headlines are assertive, insight-driven statements. Max 3–4 bullets per slide, each one
+  line. Alternate `content-white` / `content-blue` for rhythm. Every slide gets `speakerNotes`.
+
+### Deck schema
+
+```json
+{
+  "title": "Deck title — client-specific, value-led",
+  "subtitle": "Deck subtitle",
+  "slides": [
+    {
+      "layout": "title | content-white | content-blue | section | closing | stats | comparison",
+      "title": "Assertive insight-driven headline",
+      "subtitle": "Optional — title/section/closing only",
+      "bullets": ["Short punchy point — one line max"],
+      "stats": [{ "value": "95%", "label": "of GenAI pilots fail (MIT 2025)" }],
+      "comparison": { "headers": ["Col1", "Col2", "Col3"], "rows": [["A", "B", "C"]] },
+      "speakerNotes": "Why this slide matters + delivery guidance"
+    }
+  ]
+}
+```
+
+Supported layouts: `title`, `section`, `closing`, `content-white`, `content-blue`,
+`stats`, `comparison`. (For a native PowerPoint `.pptx` instead, the app's
+`scripts/generate_deck.py` consumes this exact schema.)
