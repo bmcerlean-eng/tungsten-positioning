@@ -39,16 +39,25 @@ FOOTER_TEXT = (
 # DOCX — reuse the app's generator so output matches the web app byte-for-byte
 # ---------------------------------------------------------------------------
 def write_docx(data, out_path):
-    """Render the .docx by importing the app's create_document(). Returns path or None."""
-    repo_root = Path(__file__).resolve().parents[4]
-    app_scripts = repo_root / "scripts"
-    sys.path.insert(0, str(app_scripts))
+    """Render the .docx by importing the app's create_document(). Returns path or None.
+
+    generate_doc.py is searched for in two places so the skill works both inside
+    the tungsten-positioning repo and as a standalone package:
+      1. alongside this script (bundled copy, used in packaged installs)
+      2. <repo_root>/scripts/ (the app's original, used in-repo)
+    """
+    here = Path(__file__).resolve().parent
+    repo_scripts = here.parents[3] / "scripts"
+    for candidate in (here, repo_scripts):
+        if (candidate / "generate_doc.py").exists():
+            sys.path.insert(0, str(candidate))
+            break
     try:
         from generate_doc import create_document  # type: ignore
     except Exception as exc:  # pragma: no cover - dependency/path issue
         print(
             f"WARN: could not render .docx ({exc}). "
-            "Ensure python-docx is installed and scripts/generate_doc.py exists.",
+            "Ensure python-docx is installed and generate_doc.py is available.",
             file=sys.stderr,
         )
         return None
