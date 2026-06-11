@@ -40,4 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.claude/
+
+# Claude Code local config is ignored, but project skills are version-controlled
+.claude/*
+!.claude/skills/
+
+# Skill output
+/generated-positioning/
